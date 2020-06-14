@@ -2,7 +2,6 @@ package com.devilpanda.starfishcollector.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import com.devilpanda.starfishcollector.StarfishCollectorAlpha;
 import com.devilpanda.starfishcollector.StarfishCollectorBeta;
 
 public class DesktopLauncher {

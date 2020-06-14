@@ -7,18 +7,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 
-public class StarfishCollectorBeta extends ApplicationAdapter {
+public class StarfishCollectorBeta extends GameBeta {
 
     private Turtle turtle;
     private ActorBeta ocean, starfish, winMessage;
-    private Stage mainStage;
-    private boolean win;
 
-    @Override
-    public void create() {
-        super.create();
-
-        mainStage = new Stage();
+    public void initialize() {
 
         ocean = new ActorBeta();
         ocean.setTexture(new Texture(Gdx.files.internal("water.jpg")));
@@ -41,30 +35,13 @@ public class StarfishCollectorBeta extends ApplicationAdapter {
         winMessage.setVisible(false);
         mainStage.addActor(winMessage);
 
-        win = false;
     }
 
-    @Override
-    public void render() {
-        super.render();
-        // User input
-        mainStage.act(1/60f);
+    public void update(float dt) {
 
         if (turtle.overlaps(starfish)){
             starfish.remove();
             winMessage.setVisible(true);
         }
-
-
-        // render
-        Gdx.gl.glClearColor(0, 0, 0, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        mainStage.draw();
-    }
-
-    @Override
-    public void dispose() {
-        super.dispose();
-        mainStage.dispose();
     }
 }
