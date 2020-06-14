@@ -50,8 +50,9 @@ public class StarfishCollectorAlpha extends ApplicationAdapter {
 	@Override
 	public void render () {
 		//Controls
-		if (Gdx.input.isKeyPressed(Input.Keys.LEFT))
+		if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
 			turtleX--;
+		}
 		if (Gdx.input.isKeyPressed(Input.Keys.RIGHT))
 			turtleX++;
 		if (Gdx.input.isKeyPressed(Input.Keys.UP))
@@ -82,5 +83,9 @@ public class StarfishCollectorAlpha extends ApplicationAdapter {
 	@Override
 	public void dispose () {
 		batch.dispose();
+		oceanTexture.dispose();
+		starfishTexture.dispose();
+		turtleTexture.dispose();
+		winMessageTexture.dispose();
 	}
 }
