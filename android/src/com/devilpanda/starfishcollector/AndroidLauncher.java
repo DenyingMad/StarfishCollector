@@ -12,6 +12,6 @@ public class AndroidLauncher extends AndroidApplication {
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
 		config.useCompass = false;
 		config.useAccelerometer = false;
-		initialize(new StarfishCollectorBeta(), config);
+		initialize(new LevelScreen(), config);
 	}
 }
